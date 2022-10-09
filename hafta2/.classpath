@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="2haftaodev/Classes/src"/>
+	<classpathentry kind="src" path="2haftaodev/Encapsulation/src"/>
+	<classpathentry kind="src" path="2haftaodev/FieldandAttribute/src"/>
+	<classpathentry kind="src" path="2haftaodev/getterSetterandConstruction/src"/>
+	<classpathentry kind="src" path="2haftaodev/Inheritance/src"/>
+	<classpathentry kind="src" path="2haftaodev/InheritanceDemo/src"/>
+	<classpathentry kind="src" path="2haftaodev/methodOverLoading/src"/>
+	<classpathentry kind="src" path="2haftaodev/ReCapDemoClasses/src"/>
+	<classpathentry kind="src" path="2haftaodev/src"/>
+	<classpathentry kind="output" path="2haftaodev/Classes/bin"/>
+</classpath>
