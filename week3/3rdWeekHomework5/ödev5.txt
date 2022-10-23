@@ -1,0 +1,73 @@
+Select * From Customers
+
+SELECT CustomerName MüşteriAdı,ContactName İletişimAdı,City Şehir FROM Customers - Alias Gösterilen Tablo kolon isimlerini değiştirdik
+
+SELECT * FROM Customers Where City = 'London' - Sehri London olanları getir
+Select * From Products - ÜRün tablosunu getir
+
+
+SELECT CustomerName MüşteriAdı,ContactName İletişimAdı,City Şehir FROM Customers - Alias
+Select * From Customers
+
+SELECT * FROM Customers Where City = 'London'
+Select * From Customers Where City ='Berlin'
+--case insensitive
+Select * From Products where categoryId = 1 or categoryId = 3 --Products tablosu içinde categoryId 1 veya 3 olanları getir
+Select * From Products where categoryId = 1 and Price >= 10 -- categoryid 1 ve price 10 dan büyük yada eşit olanları getir
+
+
+
+select * from products order by CategoryId,ProductName -- orderbydan sonra gelene göre sırala sonrasında bir kolon daha yazarsam bu sıralama içerisinde categoryıd aynı olanları virgülden sonraki kolon önceliğine göre sıralar
+
+select * from products order by Price asc- fiyata göre artan sıralama -- ascending karşılığıdır
+
+select * from products order by Price desc- fiyata göre artan sıralama -- descending karşılığıdır
+
+select * from Products where categoryId = 1 order by Price desc --categoryId = 1 olanları filtrele onları fiyatı azalan şeklinde sırala
+
+select count(*) from Products -- Products içindeki satırları say
+
+select count(*) from Products where categoryId = 2 -- categoryId = 2 olanları say
+
+Select * from products group by CategoryId datayı CategoryId ye göre grupla
+
+select categoryId,count(*) from products group by CategoryId --hangi kategoride kaç ürün var onu bulur
+--burada arka planda her bir categoryıd için bir geçici tablo oluşuyor gibi düşünülebilir
+
+select categoryId,count(*) from products group by CategoryId having count(*)<10 --kategorilerdeki ürünlerin ürün sayısı 10 dan küçük olanların categoryId ve sayısını ver 
+
+select CategoryID,count(*) from products where price>20 group by CategoryId having count(*)<10
+
+select Products.ProductId,Products.ProductName,Products.Price,Categories.CategoryName from products inner join Categories on Products.CategoryID = Categories.CategoryID --products ile categorileri biraraya getir 
+
+---DTO Data Tranformation Object
+
+select Products.ProductId,Products.ProductName,Products.Price,Categories.CategoryName from products inner join Categories on Products.CategoryID = Categories.CategoryID where Products.Price>10 --products ile categorileri biraraya getir 
+
+INNER JOIN
+-------------
+sadece eşleşen dataları getirir eşleşmeyen datalar varsa getirmez
+
+Select * From Products p inner join OrderDetails od on p.ProductId = od.ProductId
+
+left join
+----------------------
+yazıma göre soldaki tabloda olup sağda olmayanları da getir demektir
+
+Select * From Products p left join OrderDetails od on p.ProductId = od.ProductId --bu şu anlama geliyor ben tüm ürünlerden satış yapmışım
+çünkü inner join yaptık ortak alanlara göre sıralama aynı ürünlerde olanları listele siparişdeki olmayanları listeleme dedik onda da aynı sayıda
+veri geldi
+
+select * from Customers c inner join Orders o on c.CustomerId = o.CustomerId - 196 adet sipariş varmış
+
+select * from Customers c left join Orders o on c.CustomerId = o.CustomerId ( 213 kişi - 196 = 17 kişi sipariş vermemiş)
+
+select * from Customers c left join Orders o on c.CustomerId = o.CustomerId where o.CustomerId is null (sipariş vermeyen kişiler gelir)
+
+
+right join
+------------------------
+
+yazıma göre sağdaki tabloda olup sağda olanları solda olmayanları getir demektir
+
+
